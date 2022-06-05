@@ -10,6 +10,7 @@ Braeden McNealy
             - Built and Initialized repository and Project
                     - 6/3 Komodo_Insurance - added Pococs, Repositories, UI, sln, Gitignore, readme
 					- 6/5 Developer.cs - corrected pluralsight property and added pluralsight license property
+					- 6/5 DevTeam.cs - Added constructors and properties
             
 
 Melinda Ervin
