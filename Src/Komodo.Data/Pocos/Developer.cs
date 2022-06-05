@@ -11,19 +11,13 @@ using System.Threading.Tasks;
             FirstName = firstName;
             LastName = lastName;
         }
-        public Developer(bool hasPluralAccess)
-        {
-        if(hasPluralAccess == true)
-        {
-            System.Console.WriteLine("Access granted.");
-        }
-        else
-        {
-            System.Console.WriteLine("Access denied.");
-        }
-        }
+    
 
-        public int ID { get; set }
-        public string FirstName { get; set }
-        public string LastName { get; set }
+        public int ID { get; set;}
+        public string FirstName { get; set;}
+        public string LastName { get; set;}
+
+        public bool Pluralsight { get; set;}
+
+        public bool PluralsightLiscence{get; set;}
     }
