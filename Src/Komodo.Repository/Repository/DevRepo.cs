@@ -43,10 +43,10 @@ using System.Threading.Tasks;
 			return null;
 		}
 
-		public List<Developer> PluralsightLicense();
+		public List<Developer> PluralsightLicense()
 		{
 			var license = new List<Developer>();
-			foreach (Developer d in _developerDirectory)
+			foreach(Developer d in _developerDirectory)
 			{
 				if(d.PluralsightLicense == false)
 				{
