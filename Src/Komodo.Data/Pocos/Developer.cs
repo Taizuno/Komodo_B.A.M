@@ -6,10 +6,12 @@ using System.Threading.Tasks;
     public class Developer
     {
         public Developer(){}
-        public Developer(string firstName, string lastName)
+        public Developer(string firstName, string lastName, bool pluralsight, bool pluralsightLiscence)
         {
             FirstName = firstName;
             LastName = lastName;
+            Pluralsight = pluralsight;
+            PluralsightLiscence = pluralsightLiscence;
         }
         public int ID { get; set;}
         public string FirstName { get; set;}
