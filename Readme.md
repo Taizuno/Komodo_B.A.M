@@ -19,6 +19,7 @@ Melinda Ervin
 	Linkedin:
 		https://www.linkedin.com/feed/
 			- 6/4 Developer.cs - constructed and added properties
+			-6/8 DevRepo - constructed Developer Repository with help from teammate
 
 Andra Winters
 	Github: https://github.com/AndyCiee
