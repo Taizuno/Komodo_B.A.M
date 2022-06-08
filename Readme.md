@@ -19,3 +19,8 @@ Melinda Ervin
 	Linkedin:
 		https://www.linkedin.com/feed/
 			- 6/4 Developer.cs - constructed and added properties
+
+Andra Winters
+	Github: https://github.com/AndyCiee
+	LinkedIn: https://www.linkedin.com/in/andra-winters/
+	-6/8 DevTeamRepo
