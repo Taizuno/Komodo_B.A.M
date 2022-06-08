@@ -11,6 +11,8 @@ Braeden McNealy
                     - 6/3 Komodo_Insurance - added Pococs, Repositories, UI, sln, Gitignore, readme
 					- 6/5 Developer.cs - corrected pluralsight property and added pluralsight license property
 					- 6/5 DevTeam.cs - Added constructors and properties
+					- 6/8 DevRepo.cs - assisted in pluralsightLicense, added reference
+					- 6/8 DevTeamRepo.cs - added references
             
 
 Melinda Ervin
@@ -19,9 +21,9 @@ Melinda Ervin
 	Linkedin:
 		https://www.linkedin.com/feed/
 			- 6/4 Developer.cs - constructed and added properties
-			-6/8 DevRepo - constructed Developer Repository with help from teammate
+			-6/8 DevRepo.cs - constructed Developer Repository with help from teammate
 
 Andra Winters
 	Github: https://github.com/AndyCiee
 	LinkedIn: https://www.linkedin.com/in/andra-winters/
-	-6/8 DevTeamRepo
+		-6/8 DevTeamRepo.cs
