@@ -12,7 +12,7 @@ Braeden McNealy
 					- 6/5 Developer.cs - corrected pluralsight property and added pluralsight license property
 					- 6/5 DevTeam.cs - Added constructors and properties
 					- 6/8 DevRepo.cs - assisted in pluralsightLicense, added reference
-					- 6/8 DevTeamRepo.cs - added references
+					- 6/8 DevTeamRepo.cs - added references/ Added methods
             
 
 Melinda Ervin
