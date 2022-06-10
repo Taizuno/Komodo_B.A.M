@@ -21,7 +21,8 @@ Melinda Ervin
 	Linkedin:
 		https://www.linkedin.com/feed/
 			- 6/4 Developer.cs - constructed and added properties
-			-6/8 DevRepo.cs - constructed Developer Repository with help from teammate
+			- 6/8 DevRepo.cs - constructed Developer Repository with help from teammate
+			- 6/10 Added UI folder with ProgramUI.cs file to Komodo.UI, added portion of code to ProgramUI.cs file, fixed minor spelling errors
 
 Andra Winters
 	Github: https://github.com/AndyCiee

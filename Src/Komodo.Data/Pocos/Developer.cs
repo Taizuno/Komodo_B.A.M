@@ -11,7 +11,7 @@ using System.Threading.Tasks;
             FirstName = firstName;
             LastName = lastName;
             Pluralsight = pluralsight;
-            PluralsightLiscence = pluralsightLiscence;
+            PluralsightLicense = pluralsightLicense;
         }
         public int ID { get; set;}
         public string FirstName { get; set;}
@@ -19,5 +19,5 @@ using System.Threading.Tasks;
 
         public bool Pluralsight { get; set;}
 
-        public bool PluralsightLiscence{get; set;}
+        public bool PluralsightLicense{get; set;}
     }
