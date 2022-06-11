@@ -319,7 +319,7 @@ using System.Threading.Tasks;
         }
         }
     //NOTE: case 9 Delete
-    private void DeleteDevTeam()
+    private void DeleteTeam()
 {
 	Console.Clear();
 	System.Console.WriteLine("===Store Removal===");
