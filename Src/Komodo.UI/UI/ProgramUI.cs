@@ -354,26 +354,22 @@ using System.Threading.Tasks;
                 }
             }
         }
-        }
+    }    
 // NOTE case 10
-private void RemoveDevFromTeam();
-{
-
+    private void RemoveDevFromTeam()
+    {
     Console.Clear();
-	viewAllDevTeams();
+	ViewAllDevTeams();
 	Console.WriteLine("Please enter the team ID.");
-
 	int id = int.Parse(Console.ReadLine());
-
 	var aTeam = _dtRepo.GetTeamByID(id);
 	foreach(Developer d in aTeam.Developers)
 	{
-		System.Console.WriteLine($"{d.ID} {d.FirstName} {d.LastName} \n")
+		System.Console.WriteLine($"{d.ID} {d.FirstName} {d.LastName} \n");
 	}
-	
-	try{
-
-		Console.WriteLine("Enter ID of the developer you wish to remove.")
+	try
+    {
+		Console.WriteLine("Enter ID of the developer you wish to remove.");
 		int developerID = int.Parse(Console.ReadLine());
 		var developer = _dRepo.GetDeveloperByID(developerID);
 		bool isRemoved = _dtRepo.RemoveTeamByID(userSelectedDevTeam);
@@ -386,18 +382,13 @@ private void RemoveDevFromTeam();
 			System.Console.WriteLine("Pre-K, pause something went wrong try again.");
 		}
 			aTeam.Developers.Remove(developer);
-}
+    }
 	catch
 		{
 			System.Console.WriteLine("Sorry, invalid selection.");
 		}	
-		}
 		PressAnyKey();
-		
-	
-	}
-
-        
+	}   
     //NOTE: case 11 Delete
     private void DeleteTeam()
     {
@@ -477,3 +468,4 @@ private void RemoveDevFromTeam();
         }
     }
     }
+    
