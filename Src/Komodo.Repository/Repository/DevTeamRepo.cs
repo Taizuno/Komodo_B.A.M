@@ -14,10 +14,12 @@ using System.Threading.Tasks;
         {
             if(team != null)
             {
+                _count++;
+                team.ID = _count;
                 _devTeamDirectory.Add(team);
                 return true;
             }
-            return null;
+            return false;
         }
     // ?Read All
         public List<DevTeam> GetAllTeams()

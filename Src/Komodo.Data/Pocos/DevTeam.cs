@@ -6,10 +6,9 @@ using System.Threading.Tasks;
     public class DevTeam
     {
         public DevTeam(){}
-        public DevTeam(string teamname, List<Developer> developers)
+        public DevTeam(string teamname)
         {
             TeamName = teamname;
-            Developers = developers;
         }
         public int ID {get; set;}
         public string TeamName{get;set;}
