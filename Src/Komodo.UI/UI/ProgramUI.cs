@@ -247,7 +247,7 @@ using System.Threading.Tasks;
         Console.Clear();
 
         System.Console.WriteLine("===DevTeam Details===");
-        var devTeam = _dtRepo.GetAllTeams(); 
+        var devTeams = _dtRepo.GetAllTeams(); 
     }
 
     }
