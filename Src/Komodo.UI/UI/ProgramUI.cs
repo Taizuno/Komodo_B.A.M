@@ -318,7 +318,6 @@ using System.Threading.Tasks;
             newDevTeam.Name = Console.ReadLine();
         }
     }
-
 bool hasAssignedDeveloper = false;
 while(!hasAssignedDevelopers)
 {
