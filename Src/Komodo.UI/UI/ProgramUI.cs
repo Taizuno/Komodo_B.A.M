@@ -185,4 +185,69 @@ using System.Threading.Tasks;
 
             PressAnyKey();
         }
+
+    // NOTE Case 4
+    public void AddTeamToDirectory()
+    {
+        Console.Clear();
+
+        DevTeam newDevTeam = new DevTeam();
+
+        var currentDevelopers = _dRepo.GetAllDevelopers();
+        
+        System.Console.WriteLine("Please enter a team name:");
+        newDevTeam.Name = Console.ReadLine();
+
+        // Add New Developers
+
+        bool hasAssignedDeveloper = false;
+        while(!hasAssignedDeveloper)
+        {
+            System.Console.WriteLine("Are there any employees? y/n");
+            string hasDeveloper = Console.ReadLine().ToLower();
+
+            if(hasDeveloper == "y")
+            {
+                foreach(var d in currentDevelopers)
+                {
+                    System.Console.WriteLine($"ID {d.ID}: {d.FirstName} {d.LastName}");
+                }
+
+                System.Console.WriteLine("Please select an employee ID number \n");
+                int developerSelection = int.Parse(Console.ReadLine());
+                Developer selectedDeveloper = _dRepo.GetDeveloperByID(developerSelection);
+
+                if(selectedDeveloper != null)
+                {
+                    newDevTeam.Developers.Add(selectedDeveloper);
+                    currentDevelopers.Remove(selectedDeveloper);
+                }
+                else
+                {
+                    System.Console.WriteLine($"Sorry, the developer with ID: {developerSelection}");
+                }
+            }
+        else
+        {
+        hasAssignedDeveloper = true;
+        }
+        }
+    }
+    
+
+    // NOTE Case 5
+    // ! Helper Method
+    private void DisplayDevTeamListing(DevTeam devTeam)
+    {
+        System.Console.WriteLine($"DevTeam ID: {devTeam.ID} \n DevTeam Name: {devTeam.Neam}\n");
+    }
+
+    private void ViewTeamByID()
+    {
+        Console.Clear();
+
+        System.Console.WriteLine("===DevTeam Details===");
+        var devTeam = _dtRepo.GetAllTeams(); 
+    }
+
     }
