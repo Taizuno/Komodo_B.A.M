@@ -351,13 +351,12 @@ using System.Threading.Tasks;
             }
         }
     }
-    }
     // NOTE Case 8 Delete
-    private void DeleteDevTeam()
+    private void Delete DevTeam()
 {
 	Console.Clear();
 
-	System.Console.WriteLine("===Store Removal===");
+	System.Console.WriteLine("===Store Removal===")
 	var DevTeams = _dRepo.GetAllDevTeam();
 
 	foreach(DevTeam d in devteam)
@@ -367,9 +366,9 @@ using System.Threading.Tasks;
 
 	try
 	{
-		System.Console.WriteLine("Please select astore by ID: \n");
+		System.Console.WriteLine("Please select astore by ID: \n")
 		int userSelectedDevTeam = int.Parse(Console.ReadLine());
-		bool isSuccessful = _dRepo.RemoveDevTeamFromDatabase(userSelectedDevTeam);
+		bool is Successful = _dRepo.RemoveDevTeamFromDatabase(userSelectedDevTeam);
 
 		if(isSuccessful)
 		{
@@ -379,12 +378,27 @@ using System.Threading.Tasks;
 		{
 			System.Console.WriteLine("Store could not be removed.");
 		}
-    }
-	catch
+		catch
 		{
 			System.Console.WriteLine("Sorry, invalid selection.");
 		}
 		
 		PressAnyKey();
     }
+}
+
+//NOTE Close App
+private bool CloseApplication()
+{
+	Console.Clear();
+	System.Console.WriteLine("Bye, Felicia");
+	PressAnyKey();
+	return false;
+}
+
+private void PressAnyKey()
+{
+	System.Console.WriteLine("Press ANY KEY to continue...");
+	Console.ReadKey();
+}
 }
