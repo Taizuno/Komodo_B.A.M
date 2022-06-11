@@ -13,7 +13,7 @@ Braeden McNealy
 					- 6/5 DevTeam.cs - Added constructors and properties
 					- 6/8 DevRepo.cs - assisted in pluralsightLicense, added reference
 					- 6/8 DevTeamRepo.cs - added references/ Added methods
-					- 6/11 ProgramUI.cs - debug , add dev to teams(case9)
+					- 6/11 ProgramUI.cd - debug
             
 
 Melinda Ervin
@@ -23,11 +23,13 @@ Melinda Ervin
 		https://www.linkedin.com/feed/
 			- 6/4 Developer.cs - constructed and added properties
 			- 6/8 DevRepo.cs - constructed Developer Repository with help from teammate
-			- 6/10 Added UI folder with ProgramUI.cs file to Komodo.UI, added portion of code to ProgramUI.cs file, fixed minor spelling errors
-			- 6/11 ProgramUI.cs - added references, worked on ProgramUI.cs case 10 with teammates, helped debug by finding errors
-
+			- 6/10 Added UI folder with ProgramUI.cs file (start to case 3) to Komodo.UI, added portion of code to ProgramUI.cs file, fixed minor spelling ,
+			
+			- 6/11 ProgramUI.cs - added references
 
 Andra Winters
 	Github: https://github.com/AndyCiee
 	LinkedIn: https://www.linkedin.com/in/andra-winters/
 		-6/8 DevTeamRepo.cs
+		-6/10 - 6/11 Program UI items 4-8 case 10 - press any key to exit with help
+		-6/11 Debug, finished program UI, help finish one of the bonus with help.
