@@ -256,13 +256,13 @@ using System.Threading.Tasks;
 
         try
         {
-            System.Console.WriteLine("Please select a Development Team by ID: \n" )
+            System.Console.WriteLine("Please select a Development Team by ID: \n" );
             int userInput = int.Parse(Console.ReadLine());
             var selectedDevTeam = _dRepo.GetDevTeamByID(userInput);
 
         if(selectedDevTeam != null)
         {
-            DisplayDevTeamDetails(selectedDevTeam)
+            DisplayDevTeamListing(selectedDevTeam);
         }
         else
         {
@@ -314,7 +314,7 @@ using System.Threading.Tasks;
             Console.Clear();
             DevTeam newDevTeam = new DevTeam();
 
-            var currentDevelopers = _eRepo.GetAllDevelopers
+            var currentDevelopers = _eRepo.GetAllDevelopers;
             newDevTeam.Name = Console.ReadLine();
 
             bool hasAssignedDeveloper = false;
@@ -351,4 +351,5 @@ using System.Threading.Tasks;
             }
         }
     }
+}
 }
