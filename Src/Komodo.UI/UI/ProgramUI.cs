@@ -58,7 +58,9 @@ using System.Threading.Tasks;
                 +"6. View a Team \n"
                 +"7. View All Teams \n"
                 +"8. Update Team \n"
-                +"9. Delete Team \n"
+                +"9. Add Developers to a Team \n"
+                +"10. Remove Developers from a Team \n"
+                +"11. Delete Team \n"
                 +"````````````````````````` \n"
                 +"X. Close Application \n"
                 );
@@ -99,6 +101,14 @@ using System.Threading.Tasks;
                         break;
                     case "9":
                     case "nine":
+                        AddDevToTeam();
+                        break;
+                    case "10":
+                    case "ten":
+                        RemoveDevFromTeam();
+                        break;
+                    case "11":
+                    case "eleven":
                         DeleteTeam();
                         break;
                     case "x":    
