@@ -6,7 +6,7 @@ using System.Threading.Tasks;
     public class Developer
     {
         public Developer(){}
-        public Developer(string firstName, string lastName, bool pluralsight, bool pluralsightLiscense)
+        public Developer(string firstName, string lastName, bool pluralsight, bool pluralsightLicense)
         {
             FirstName = firstName;
             LastName = lastName;
