@@ -316,38 +316,39 @@ using System.Threading.Tasks;
 
             var currentDevelopers = _eRepo.GetAllDevelopers
             newDevTeam.Name = Console.ReadLine();
+
+            bool hasAssignedDeveloper = false;
+            while(!hasAssignedDevelopers)
+            {
+            System.Console.WriteLine("Do you have any develpers? y/n \n");
+            newDevTeam.Name = Console.ReadLine().ToLower();
+
+            if(developerInput == "y")
+            {
+
+            foreach(var d in currentDevelopers)
+            {
+            System.Console.WriteLine($"{e.ID} {e.FirstName} {e.LastName}");
+            }
+
+            System.Console.WriteLine("Please select employee by ID: \n");
+            int developerSelected = int.Parse(Console.ReadLine());
+            var selectedDeveloper = _dRepo.GetDeveloperByID(developerSelected);
+
+            if(selectedDeveloper != null)
+            {
+            newDevTeam.Developer.Add(selectedDeveloper);
+            currentDeveloper.Remove(selectedDeveloper);
+            }
+            else
+            {
+            System.Console.WriteLine("Sorry, no employee.");
+            }
+            }
+
+            {
+            hasAssignedDevelopers = true;
+            }
         }
     }
-bool hasAssignedDeveloper = false;
-while(!hasAssignedDevelopers)
-{
-System.Console.WriteLine("Do you have any develpers? y/n \n");
-newDevTeam.Name = Console.ReadLine().ToLower();
-
-if(developerInput == "y")
-{
-
-foreach(var d in currentDevelopers)
-{
-System.Console.WriteLine($"{e.ID} {e.FirstName} {e.LastName}");
-}
-
-System.Console.WriteLine("Please select employee by ID: \n");
-int developerSelected = int.Parse(Console.ReadLine());
-var selectedDeveloper = _dRepo.GetDeveloperByID(developerSelected);
-
-if(selectedDeveloper != null)
-{
-newDevTeam.Developer.Add(selectedDeveloper);
-currentDeveloper.Remove(selectedDeveloper);
-}
-else
-{
-System.Console.WriteLine("Sorry, no employee.");
-}
-}
-
-{
-hasAssignedDevelopers = true;
-}
 }
