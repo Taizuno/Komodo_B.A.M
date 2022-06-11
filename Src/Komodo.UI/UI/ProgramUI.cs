@@ -248,6 +248,50 @@ using System.Threading.Tasks;
 
         System.Console.WriteLine("===DevTeam Details===");
         var devTeams = _dtRepo.GetAllTeams(); 
+
+        foreach(DevTeam d in teams)
+        {
+            DisplayDevTeamListing(d);
+        }
+
+        try
+        {
+            System.Console.WriteLine("Please select a Development Team by ID: \n" )
+            int userInput = int.Parse(Console.ReadLine());
+            var selectedDevTeam = _dRepo.GetDevTeamByID(userInput);
+        }
+
+        if(selectedDevTeam != null)
+        {
+            DisplayDevTeamDetails(selectedDevTeam)
+        }
+        else
+        {
+            System.Console.WriteLine($"Sorry, the development team with the ID: {userInput} doesn't exist");
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
+        }
+        PressAnyKey();
+    }
+
+    // NOTE Case 6-View All Dev Team
+    private void ViewAllDevTeam()
+    {
+        Console.Clear();
+
+        System.Console.WriteLine("===Developer Team===");
+
+        var devteamInDB = _dRepo.GetAllTeams();
+
+        foreach(DevTeam d in devteamInDB)
+        {
+            DisplayDevTeamListing(d);
+        }
+
+        PressAnyKey();
     }
 
     }
