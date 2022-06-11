@@ -259,7 +259,7 @@ using System.Threading.Tasks;
             System.Console.WriteLine("Please select a Development Team by ID: \n" )
             int userInput = int.Parse(Console.ReadLine());
             var selectedDevTeam = _dRepo.GetDevTeamByID(userInput);
-            
+
         if(selectedDevTeam != null)
         {
             DisplayDevTeamDetails(selectedDevTeam)
@@ -308,6 +308,14 @@ using System.Threading.Tasks;
 
         System.Console.WriteLine("Please enter a valid Developer Team ID: \n");
         int userInput = int.Parse(Console.ReadLine());
+
+        if(selectedDevTeam !=null)
+        {
+            Console.Clear();
+            DevTeam newDevTeam = new DevTeam();
+
+            var currentDevelopers = _eRepo.GetAllDevelopers
+        }
     }
 
     }
