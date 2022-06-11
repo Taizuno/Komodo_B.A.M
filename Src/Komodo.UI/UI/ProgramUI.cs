@@ -356,7 +356,7 @@ using System.Threading.Tasks;
         }
         }
         
-    //NOTE: case 9 Delete
+    //NOTE: case 11 Delete
     private void DeleteTeam()
     {
 	Console.Clear();
@@ -398,5 +398,40 @@ using System.Threading.Tasks;
     {
 	System.Console.WriteLine("Press ANY KEY to continue...");
 	Console.ReadKey();
+    }
+    private void AddDevToTeam()
+    {
+        Console.Clear();
+        ViewAllDevTeams();
+        System.Console.WriteLine("Please enter a Valid team ID");
+        int id = int.Parse(Console.ReadLine());
+        var team = _dtRepo.GetTeamByID(id);
+        var devs = _dRepo.GetAllDevelopers();
+        bool more = true;
+        while(more)
+        {
+            Console.Clear();
+            foreach (Developer d in devs)
+            {
+                System.Console.WriteLine($"ID: {d.ID} Name {d.FirstName} {d.LastName}");
+            } 
+            try
+            {
+            System.Console.WriteLine("please enter the ID of the developer you wish to add. Enter x when done");
+            string put = Console.ReadLine().ToLower();
+            int Did = int.Parse(put);
+            var dev = _dRepo.GetDeveloperByID(Did);
+            bool sucess = team.Developers.Add(dev);
+            }
+            catch
+            {
+                System.Console.WriteLine(" Invalid Selction ");
+            }
+            if(ParamArrayAttribute == "x")
+            {
+                PressAnyKey();
+                break;
+            }
+        }
     }
     }
