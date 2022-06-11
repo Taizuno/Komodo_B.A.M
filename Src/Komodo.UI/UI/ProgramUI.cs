@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
     public class ProgramUI
     {
-        private readonly Dev_Repository _dRepo = new Dev_Repository();
-        private readonly DevTeam_Repositpory _dtRepo = new DevTeam_Repositpory();
+        private readonly DevRepo _dRepo = new Dev_Repository();
+        private readonly DevTeamRepo _dtRepo = new DevTeam_Repositpory();
         public void Run()
         {
             SeedData();
@@ -71,11 +71,11 @@ using System.Threading.Tasks;
                         break;
                     case "2":
                     case "two":
-                        ViewDeveloperByID();
+                        ViewAllDevelopers();
                         break;
                     case "3":
                     case "three":
-                        ViewAllDevelopers();
+                        ViewDeveloperByID();
                         break;
                     case "4":
                     case "four":
@@ -105,7 +105,7 @@ using System.Threading.Tasks;
                         isRunning = CloseApplication();
                         break;
                     default:
-                        System.Console.WriteLine("Invalid selection. Please enter a valid number 1-9.");
+                        System.Console.WriteLine("Invalid selection.");
                         break;
                 }
             }
@@ -125,9 +125,31 @@ using System.Threading.Tasks;
             {
                 System.Console.WriteLine($"{newDeveloper.FirstName} {newDeveloper.LastNmae} was successfully added to the directory.");
             }
+            else
+            {
+                System.Console.WriteLine("Invalid Input.");
+            }
             PressAnyKey();
         }
-    //NOTE case 2
+            //NOTE case 2
+        public void ViewAllDevelopers()
+        {
+            Console.Clear();
+            List<Developer> developersInDir = _dRepo.GetAllDevelopers();
+            if(developersInDir.Count > 0)
+            {
+                foreach (Developer d in developersInDir)
+                {
+                    System.Console.WriteLine($"ID: {d.ID} Name: {d.FirstName} {d.LastName} \n");
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("No developers exist.");
+            }
+            PressAnyKey();
+        }
+    //NOTE case 3
         public void ViewDeveloperByID()
         {
             Console.Clear();
@@ -137,7 +159,7 @@ using System.Threading.Tasks;
             Developer developer = _dRepo.GetDeveloperByID(inputDeveloperID);
             if(developer != null)
             {
-                DisplayDeveloperInfo(developer);
+                System.Console.WriteLine($"ID: {developer.ID} Name: {developer.FirstName} {developer.LastName} \n");
             }
             else
             {
@@ -145,24 +167,7 @@ using System.Threading.Tasks;
             }
             PressAnyKey();
         }
-    //NOTE case 3
-        public void ViewAllDevelopers()
-        {
-            Console.Clear();
-            List<Developer> developersInDir = _dRepo.GetAllDevelopers();
-            if(developersInDir.Count > 0)
-            {
-                foreach (Developer d in developersInDir)
-                {
-                    DisplayDeveloperInfo(d);
-                }
-            }
-            else
-            {
-                System.Console.WriteLine("No developers exist.");
-            }
-            PressAnyKey();
-        }
+
     // NOTE Case 4
     public void ViewAllPluralsightLicenses()
     {
@@ -181,25 +186,22 @@ using System.Threading.Tasks;
         }
     }
     // NOTE Case 5
-    public void AddTeamToDirectory(DevTeam newDevTeam)
+    public void AddTeamToDirectory()
     {
         Console.Clear();
-        var currentDevelopers = _dRepo.GetAllDevelopers();
+        DevTeam newDevTeam = new DevTeam();
+        DevTeam currentDeveloper = _dRepo.GetAllDevelopers();
         System.Console.WriteLine("Please enter a team name:");
         newDevTeam.Name = Console.ReadLine();
         // Add New Developers
         bool hasAssignedDeveloper = false;
         while(!hasAssignedDeveloper)
         {
-            System.Console.WriteLine("Are there any employees? y/n");
+            ViewAllDevelopers();
+            System.Console.WriteLine("Are there any developers? y/n");
             string hasDeveloper = Console.ReadLine().ToLower();
             if(hasDeveloper == "y")
             {
-                foreach(var d in currentDevelopers)
-                {
-                    System.Console.WriteLine($"ID {d.ID}: {d.FirstName} {d.LastName}");
-                }
-
                 System.Console.WriteLine("Please select an employee ID number \n");
                 int developerSelection = int.Parse(Console.ReadLine());
                 Developer selectedDeveloper = _dRepo.GetDeveloperByID(developerSelection);
@@ -213,10 +215,10 @@ using System.Threading.Tasks;
                     System.Console.WriteLine($"Sorry, the developer with ID: {developerSelection}");
                 }
             }
-        else
-        {
-        hasAssignedDeveloper = true;
-        }
+            else
+            {
+            hasAssignedDeveloper = true;
+            }
         }
     }
      // NOTE Case 6-View All Dev Team
@@ -228,10 +230,8 @@ using System.Threading.Tasks;
     private void ViewTeamByID()
     {
         Console.Clear();
-
         System.Console.WriteLine("===DevTeam Details===");
         var devTeams = _dtRepo.GetAllTeams(); 
-
         foreach(DevTeam d in teams)
         {
             DisplayDevTeamListing(d);
@@ -240,7 +240,7 @@ using System.Threading.Tasks;
         {
             System.Console.WriteLine("Please select a Development Team by ID: \n" );
             int userInput = int.Parse(Console.ReadLine());
-            var selectedDevTeam = _dRepo.GetDevTeamByID(userInput);
+            var selectedDevTeam = _dRepo.GetTeamByID(userInput);
 
         if(selectedDevTeam != null)
         {
@@ -251,7 +251,6 @@ using System.Threading.Tasks;
             System.Console.WriteLine($"Sorry, the development team with the ID: {userInput} doesn't exist");
         }
         }
-
         catch (System.Exception)
         {
             throw;
@@ -288,18 +287,19 @@ using System.Threading.Tasks;
         {
             Console.Clear();
             DevTeam newDevTeam = new DevTeam();
-            var currentDevelopers = _eRepo.GetAllDevelopers;
+            var currentDevelopers = _eRepo.GetAllDevelopers();
+            System.Console.WriteLine("What is the Team Name? \n");
             newDevTeam.Name = Console.ReadLine();
-            bool hasAssignedDeveloper = false;
+            bool hasAssignedDevelopers = false;
             while(!hasAssignedDevelopers)
             {
                 System.Console.WriteLine("Do you have any develpers? y/n \n");
-                newDevTeam.Name = Console.ReadLine().ToLower();
+                string developerInput = Console.ReadLine().ToLower();
                 if(developerInput == "y")
                 {
                     foreach(var d in currentDevelopers)
                     {
-                        System.Console.WriteLine($"{e.ID} {e.FirstName} {e.LastName}");
+                        System.Console.WriteLine($"{d.ID} {d.FirstName} {d.LastName}");
                     }
                     System.Console.WriteLine("Please select employee by ID: \n");
                     int developerSelected = int.Parse(Console.ReadLine());
@@ -314,17 +314,21 @@ using System.Threading.Tasks;
                     System.Console.WriteLine("Sorry, no employee.");
                     }
                 }
+                else
+                {
+                    hasAssignedDevelopers = true;
+                }
             }
-            hasAssignedDevelopers = true;
         }
         }
+        
     //NOTE: case 9 Delete
     private void DeleteTeam()
-{
+    {
 	Console.Clear();
 	System.Console.WriteLine("===Store Removal===");
-	var DevTeams = _dRepo.GetAllDevTeam();
-	foreach(DevTeam d in devteam)
+	var DevTeams = _dRepo.GetAllTeams();
+	foreach(DevTeam d in DevTeams)
 	{
 		DisplayDevTeamListing(d);
 	}
@@ -332,7 +336,7 @@ using System.Threading.Tasks;
 	{
 		System.Console.WriteLine("Please select astore by ID: \n");
 		int userSelectedDevTeam = int.Parse(Console.ReadLine());
-		bool isSuccessful = _dRepo.RemoveDevTeamFromDatabase(userSelectedDevTeam);
+		bool isSuccessful = _dRepo.RemoveTeamByID(userSelectedDevTeam);
 		if(isSuccessful)
 		{
 			System.Console.WriteLine("Store was removed.");
@@ -348,17 +352,17 @@ using System.Threading.Tasks;
 		}
 		PressAnyKey();
     }
-//NOTE Close App
-private bool CloseApplication()
-{
+    //NOTE Close App
+    private bool CloseApplication()
+    {
 	Console.Clear();
 	System.Console.WriteLine("Bye, Felicia");
 	PressAnyKey();
 	return false;
-}
-private void PressAnyKey()
-{
+    }
+    private void PressAnyKey()
+    {
 	System.Console.WriteLine("Press ANY KEY to continue...");
 	Console.ReadKey();
-}
-}
+    }
+    }

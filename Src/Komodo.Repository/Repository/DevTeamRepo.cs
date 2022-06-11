@@ -20,7 +20,7 @@ using System.Threading.Tasks;
             return null;
         }
     // ?Read All
-        public List<DevTeam> GetTeams()
+        public List<DevTeam> GetAllTeams()
         {
             return _devTeamDirectory;
         }
