@@ -13,6 +13,7 @@ Braeden McNealy
 					- 6/5 DevTeam.cs - Added constructors and properties
 					- 6/8 DevRepo.cs - assisted in pluralsightLicense, added reference
 					- 6/8 DevTeamRepo.cs - added references/ Added methods
+					- 6/11 ProgramUI.cd - debug
             
 
 Melinda Ervin
