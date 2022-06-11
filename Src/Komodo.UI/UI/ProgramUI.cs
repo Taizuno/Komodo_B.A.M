@@ -351,4 +351,38 @@ using System.Threading.Tasks;
             }
         }
     }
+    // NOTE Case 8 Delete
+    private void Delete DevTeam()
+{
+	Console.Clear();
+
+	System.Console.WriteLine("===Store Removal===")
+	var DevTeams = _dRepo.GetAllDevTeam();
+
+	foreach(DevTeam d in devteam)
+	{
+		DisplayDevTeamListing(d);
+	}
+
+	try
+	{
+		System.Console.WriteLine("Please select astore by ID: \n")
+		int userSelectedDevTeam = int.Parse(Console.ReadLine());
+		bool is Successful = _dRepo.RemoveDevTeamFromDatabase(userSelectedDevTeam);
+
+		if(isSuccessful)
+		{
+			System.Console.WriteLine("Store was removed.");
+		}
+		else
+		{
+			System.Console.WriteLine("Store could not be removed.");
+		}
+		catch
+		{
+			System.Console.WriteLine("Sorry, invalid selection.");
+		}
+		
+		PressAnyKey();
+    }
 }
