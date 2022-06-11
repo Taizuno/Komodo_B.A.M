@@ -278,6 +278,10 @@ using System.Threading.Tasks;
         if(selectedDevTeam != null)
         {
             DisplayDevTeamListing(selectedDevTeam);
+            foreach(var d in selectedDevTeam.Developers)
+            {
+                System.Console.WriteLine($"ID: {d.ID} Name: {d.FirstName} {d.LastName} \n");
+            }
         }
         else
         {
@@ -373,23 +377,17 @@ using System.Threading.Tasks;
             {
                 System.Console.WriteLine($"ID: {d.ID} Name {d.FirstName} {d.LastName}");
             } 
-            try
-            {
             System.Console.WriteLine("please enter the ID of the developer you wish to add. Enter x when done");
-            string put = Console.ReadLine().ToLower();
-            int Did = int.Parse(put);
-            var dev = _dRepo.GetDeveloperByID(Did);
-            bool sucess = team.Developers.Add(dev);
-            }
-            catch
-            {
-                System.Console.WriteLine(" Invalid Selction ");
-            }
-            if(ParamArrayAttribute == "x")
+            string enter = Console.ReadLine().ToLower();
+            if(enter == "x")
             {
                 PressAnyKey();
                 break;
             }
+            int Did = int.Parse(enter);
+            var dev = _dRepo.GetDeveloperByID(Did);
+            team.Developers.Add(dev);
+            devs.Remove(dev);
         }
     }
 // NOTE case 10
@@ -409,7 +407,7 @@ using System.Threading.Tasks;
 		Console.WriteLine("Enter ID of the developer you wish to remove.");
 		int developerID = int.Parse(Console.ReadLine());
 		var developer = _dRepo.GetDeveloperByID(developerID);
-		bool isRemoved = _dtRepo.RemoveTeamByID(userSelectedDevTeam);
+		bool isRemoved = aTeam.Developers.Remove(developer);
 		if(isRemoved)
 		{
 			System.Console.WriteLine("Developer was removed.");
