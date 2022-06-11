@@ -259,8 +259,7 @@ using System.Threading.Tasks;
             System.Console.WriteLine("Please select a Development Team by ID: \n" )
             int userInput = int.Parse(Console.ReadLine());
             var selectedDevTeam = _dRepo.GetDevTeamByID(userInput);
-        }
-
+            
         if(selectedDevTeam != null)
         {
             DisplayDevTeamDetails(selectedDevTeam)
@@ -269,6 +268,8 @@ using System.Threading.Tasks;
         {
             System.Console.WriteLine($"Sorry, the development team with the ID: {userInput} doesn't exist");
         }
+        }
+
         catch (System.Exception)
         {
             
