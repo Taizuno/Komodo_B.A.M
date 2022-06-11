@@ -294,4 +294,19 @@ using System.Threading.Tasks;
         PressAnyKey();
     }
 
+    // NOTE Case 7 Update-Team
+    private void UpdateTeam()
+    {
+        Console.Clear();
+
+        var availDevTeams = _dRepo.GetAllTeams();
+        foreach (var d in availDevTeams)
+        {
+            DisplayDevTeamListing(d);
+        }
+
+        System.Console.WriteLine("Please enter a valid Developer Team ID: \n");
+        int userInput = int.Parse(Console.ReadLine());
+    }
+
     }
